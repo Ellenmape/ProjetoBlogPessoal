@@ -1,0 +1,66 @@
+package com.generation.blogpessoal.model;
+
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.UpdateTimestamp;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
+@Entity //cria uma entidade(tabela) no banco de dados 
+@Table(name ="tb_postagem") //nomeando a tabela como tb_postagens
+
+public class Postagem {
+	@Id // torna o campo uma chave primaria no banco de dados
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //torna a chave primaria auto incremento
+	private Long id;
+	
+	@NotBlank(message = "O atributo TITULO é obrigatório!")//validation - validar nosso atributo NN e também não vazio
+	@Size(min = 5, max = 100, message="O atributo TITULO deve ter no mínimo 5 caracteres e no máximo 100 caracteres.")
+	private String titulo;
+
+	@NotBlank(message="O atributo TEXTO é obrigatório!")
+	@Size(min = 10, max = 1000,  message = "O atributo TEXTO deve ter no mínimo 10 caracteres e no máximo 1000 caracteres")
+	private String texto;
+	
+	@UpdateTimestamp
+	private LocalDateTime data;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+
+	public LocalDateTime getData() {
+		return data;
+	}
+
+	public void setData(LocalDateTime data) {
+		this.data = data;
+	}
+	
+}
