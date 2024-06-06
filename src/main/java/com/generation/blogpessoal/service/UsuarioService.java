@@ -54,12 +54,8 @@ public class UsuarioService {
 		return encoder.encode(senha);//método encoder sendo aplicado na senha
 	}
 	
-	/*
-	 * segundo problema
-	 * objetivo evitar dois usuário com mesmo email na hora do update
-	 */
-	// nome | usuario(email) | senha | foto ti.jacque@gmail.com -> ingrid@gmail.com
-	
+	//segundo problema: objetivo evitar dois usuário com mesmo email na hora do update
+	 	
 	public Optional<Usuario> atualizarUsuario(Usuario usuario){
 		//validando se o id passado existe no banco de dados
 		if(usuarioRepository.findById(usuario.getId()).isPresent()){

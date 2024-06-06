@@ -72,16 +72,12 @@ public class JwtService {
 					.setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60))
 					.signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
 	}
-
+	
+	//gerar o token puxando os claims formados no metodo anterior
 	public String generateToken(String userName) {
 		Map<String, Object> claims = new HashMap<>();
 		return createToken(claims, userName);
 	}
 		
-	//gerar o token puxando os claims formados no metodo anterior
-	public String generateToken(Object object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 }

@@ -7,6 +7,8 @@ public class UsuarioLogin {
 	private String senha;
 	private String foto;
 	private String token;
+	private String usuario;
+	
 	public Long getId() {
 		return id;
 	}
@@ -38,8 +40,11 @@ public class UsuarioLogin {
 		this.token = token;
 	}
 	public String getUsuario() {
-		// TODO Auto-generated method stub
-		return null;
+		return usuario;
 	}
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+	
 
 }
