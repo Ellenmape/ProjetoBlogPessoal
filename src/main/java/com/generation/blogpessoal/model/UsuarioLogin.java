@@ -46,5 +46,4 @@ public class UsuarioLogin {
 		this.usuario = usuario;
 	}
 	
-
 }
