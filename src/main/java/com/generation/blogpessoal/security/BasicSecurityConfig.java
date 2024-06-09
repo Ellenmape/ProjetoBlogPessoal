@@ -64,12 +64,12 @@ public class BasicSecurityConfig {
 	        .authorizeHttpRequests((auth) -> auth
 	                .requestMatchers("/usuarios/logar").permitAll() //Permite acesso público ao endpoint de login
 	                .requestMatchers("/usuarios/cadastrar").permitAll() //Permite acesso público ao endpoint de cadastro
-	                .requestMatchers("/usuarios/temas/{id}").permitAll()
-	                .requestMatchers("/usuarios/temas").permitAll()
-	                .requestMatchers("/usuarios/temas/descricao/{descricao}").permitAll()
-	                .requestMatchers("/usuarios/postagens").permitAll()
-	                .requestMatchers("/usuarios/postagens/{id}").permitAll()
-	                .requestMatchers("/usuarios/postagens/titulo/{titulo}").permitAll()
+	                .requestMatchers("/temas/{id}").permitAll()
+	                .requestMatchers("/temas").permitAll()
+	                .requestMatchers("/temas/descricao/{descricao}").permitAll()
+	                .requestMatchers("/postagens").permitAll()
+	                .requestMatchers("/postagens/{id}").permitAll()
+	                .requestMatchers("/postagens/titulo/{titulo}").permitAll()
 	                .requestMatchers("/error/**").permitAll() //Permite acesso público aos endpoints de erro
 	                .requestMatchers(HttpMethod.OPTIONS).permitAll() //Permite todas as requisições OPTIONS
 	                .anyRequest().authenticated()) //Requer autenticação para qualquer outra requisição
