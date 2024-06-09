@@ -64,7 +64,7 @@ public class BasicSecurityConfig {
 	        .authorizeHttpRequests((auth) -> auth
 	                .requestMatchers("/usuarios/logar").permitAll() //Permite acesso público ao endpoint de login
 	                .requestMatchers("/usuarios/cadastrar").permitAll() //Permite acesso público ao endpoint de cadastro
-	                .requestMatchers("/usuarios").permitAll()
+	                .requestMatchers("/usuarios/all").permitAll()
 	                .requestMatchers("/temas/{id}").permitAll()
 	                .requestMatchers("/temas").permitAll()
 	                .requestMatchers("/temas/descricao/{descricao}").permitAll()
